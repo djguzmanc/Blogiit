@@ -36,11 +36,24 @@ export class NavComponent implements OnInit {
         },
     ]
 
+    selected = [ 0, 0, 0, 0, 0 ]
+
     constructor( private subService : SubscribeService ) {
     }
 
     fireEvent( e ) {
         this.subService.updateData( e )
+        if ( this.selected[ e.id ] == 0 )
+            this.selected[ e.id ] = 1
+        else
+            this.selected[ e.id ] = 0
+    }
+
+    buttonColor( e ) {
+        if ( this.selected[ e.id ] == 1 )
+            return {'background-color':'green'}
+        else
+            return {'background-color':'#444444'}
     }
 
     ngOnInit() {

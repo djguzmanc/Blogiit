@@ -1,7 +1,7 @@
 <div style="padding-left: 20%; padding-top: 10%;">
-    <button md-button class="topic-btn" (click)="fireEvent(topics[0])">{{topics[0].name}}</button>
-    <button md-button class="topic-btn" (click)="fireEvent(topics[1])">{{topics[1].name}}</button>
-    <button md-button class="topic-btn" (click)="fireEvent(topics[2])">{{topics[2].name}}</button>
-    <button md-button class="topic-btn" (click)="fireEvent(topics[3])">{{topics[3].name}}</button>
-    <button md-button class="topic-btn" (click)="fireEvent(topics[4])">{{topics[4].name}}</button>
+    <button [ngStyle]="buttonColor(topics[0])" md-button class="topic-btn" (click)="fireEvent(topics[0])">{{topics[0].name}}</button>
+    <button [ngStyle]="buttonColor(topics[1])" md-button class="topic-btn" (click)="fireEvent(topics[1])">{{topics[1].name}}</button>
+    <button [ngStyle]="buttonColor(topics[2])" md-button class="topic-btn" (click)="fireEvent(topics[2])">{{topics[2].name}}</button>
+    <button [ngStyle]="buttonColor(topics[3])" md-button class="topic-btn" (click)="fireEvent(topics[3])">{{topics[3].name}}</button>
+    <button [ngStyle]="buttonColor(topics[4])" md-button class="topic-btn" (click)="fireEvent(topics[4])">{{topics[4].name}}</button>
 </div>
