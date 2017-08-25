@@ -24,10 +24,6 @@ export const appRoutes: Routes = [
   {
       path: 'posts',
       component: TabsComponent
-  },
-  {
-      path: 'new',
-      component: PostComponent
   }
 ];
 
@@ -44,6 +40,9 @@ export const appRoutes: Routes = [
     MaterialModule,
     NoopAnimationsModule,
     RouterModule.forRoot( appRoutes )
+  ],
+  entryComponents: [
+    PostComponent
   ],
   providers: [ SubscribeService ],
   bootstrap: [AppComponent]

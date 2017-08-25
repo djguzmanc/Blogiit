@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {MdDialog, MdDialogRef} from '@angular/material';
 
 declare var firebase: any;
 
@@ -12,7 +13,9 @@ export class PostComponent implements OnInit {
     topicSelected;
     text;
 
-  constructor() { }
+    constructor( public dialogRef: MdDialogRef<PostComponent>) {
+
+    }
 
   ngOnInit() {
   }
@@ -41,6 +44,10 @@ export class PostComponent implements OnInit {
             firebase.database().ref('/Music').push({ title: title, description: description});
             break
       }
+  }
+
+  closePost(){
+    this.dialogRef.close();
   }
 
 }

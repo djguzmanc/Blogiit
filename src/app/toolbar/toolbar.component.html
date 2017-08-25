@@ -1,11 +1,9 @@
-<!---<md-toolbar style="background-color: #DE0031">Blogiit</md-toolbar>--->
-
 <md-toolbar class="toolbar">
   Blogiit
 
   <span class="spacer"></span>
 
-  <button md-button class="col-md-1 post-btn" style="text-align: center" routerLink="/new">
+  <button md-button class="col-md-1 post-btn" style="text-align: center"  (click)='openPost()' > 
     <md-icon style="margin-right: 0px">play_for_work</md-icon>
     Post!
   </button>
