@@ -1,1 +1,52 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body, html {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    background-color: #DDD;
+}
+
+.nav {
+    height: 96vh;
+    background-color: #000;
+}
+
+.tabs {
+
+}
+
+md-tab {
+    color: black;
+}
+
+.spacer {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
+
+.toolbar {
+    background-color: #E6D700;
+}
+
+.full-width {
+    width: 70% !important;
+}
+
+.fullform {
+    width: 500px;
+}
+
+.topic-btn {
+    background-color: #444444;
+    color: white !important;
+    margin-top: 5px !important;
+    min-width: 150px !important;
+}
+
+.posts {
+    overflow-y: scroll;
+}

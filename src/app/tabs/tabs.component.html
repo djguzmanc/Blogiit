@@ -1,0 +1,10 @@
+<md-tab-group>
+    <div *ngFor="let tab of indexPermited; let i = index">
+        <md-tab *ngIf="tab==1" md-tab label="{{topics[i]}}" [@fadeInOut]>
+            <div *ngFor="let post of contents[i]" [@fadeInOut]>
+                <h1>{{post.title}}</h1>
+                <p>{{post.description}}</p>
+            </div>
+        </md-tab>
+    </div>
+</md-tab-group>
