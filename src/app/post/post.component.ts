@@ -27,6 +27,9 @@ export class PostComponent implements OnInit {
   submitPost( title, description ) {
       //console.log( title, description, this.topicSelected )
 
+      if ( title == "" || description == "" || this.topicSelected == undefined )
+        return
+
       switch( this.topicSelected ) {
         case "1":
             firebase.database().ref('/Prog').push({ title: title, description: description});
@@ -44,10 +47,7 @@ export class PostComponent implements OnInit {
             firebase.database().ref('/Music').push({ title: title, description: description});
             break
       }
-  }
 
-  closePost(){
-    this.dialogRef.close();
+      this.dialogRef.close();
   }
-
 }

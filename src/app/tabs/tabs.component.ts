@@ -27,11 +27,26 @@ export class TabsComponent implements OnInit {
     indexPermited = [ 0, 0, 0, 0, 0 ]
 
     topics = [
-        'Programación',
-        'Salud y Belleza',
-        'Tecnología',
-        'Música',
-        'Alimentación'
+        {
+            name: 'Programación',
+            not_viewed: 0
+        },
+        {
+            name: 'Salud y Belleza',
+            not_viewed: 0
+        },
+        {
+            name: 'Tecnología',
+            not_viewed: 0
+        },
+        {
+            name: 'Música',
+            not_viewed: 0
+        },
+        {
+            name: 'Alimentación',
+            not_viewed: 0
+        },
     ]
 
     constructor( private subService : SubscribeService ) {
@@ -53,14 +68,27 @@ export class TabsComponent implements OnInit {
         } else {
             this.indexPermited[ data.id ] = 1
             firebase.database( ).ref( '/' + data.tag ).on( 'child_added', ( snapshot ) => {
-                this.contents[ data.id ].push( snapshot.val( ) )
+                this.contents[ data.id ].unshift( snapshot.val( ) )
+                this.topics[ data.id ].not_viewed++
+                console.log( 'An article from ' + data.tag + ' reference was received.' )
           	})
         }
+    }
+
+    clearNotReaded( event ) {
+        this.topics[ event.index ].not_viewed = 0
     }
 
     isSubscribed( id ) {
         if ( this.indexPermited[ id ] == 1 )
             return true
+        return false
+    }
+
+    hasAtLeastOneSubscribe( ) {
+        for ( var i = 0; i < this.indexPermited.length; i++ )
+            if ( this.indexPermited[ i ] == 1 )
+                return true
         return false
     }
 }

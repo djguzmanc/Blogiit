@@ -1,9 +1,17 @@
-<md-tab-group>
-    <div *ngFor="let tab of indexPermited; let i = index">
-        <md-tab *ngIf="tab==1" md-tab label="{{topics[i]}}" [@fadeInOut]>
+<img *ngIf="!hasAtLeastOneSubscribe()" src="../assets/blog_icon.png" class="center-block" style="margin-top: 180px; vertical-align: middle">
+<md-tab-group *ngIf="hasAtLeastOneSubscribe()" (selectChange)="clearNotReaded($event)">
+    <div *ngFor="let tab of indexPermited; let i = index" class="center-block" style="padding-top: 10px; margin-left: 5%">
+        <md-tab *ngIf="tab==1" md-tab label="{{topics[i].name + ' (' + topics[i].not_viewed +')'}}"
+            [@fadeInOut]>
             <div *ngFor="let post of contents[i]" [@fadeInOut]>
-                <h1>{{post.title}}</h1>
-                <p>{{post.description}}</p>
+                <md-card class="example-card" style="margin-bottom: 10px; max-width: 99%">
+                    <md-card-header style="border-bottom: solid #000; margin-bottom: 10px;">
+                         <h3>{{post.title}}</h3>
+                    </md-card-header>
+                  <md-card-content>
+                      <p>{{post.description}}</p>
+                  </md-card-content>
+                </md-card>
             </div>
         </md-tab>
     </div>

@@ -1,7 +1,12 @@
-<div style="padding-left: 20%; padding-top: 10%;">
+<h3 class="text-center" style="color: white; padding-left: 15   %">Subscribe!</h3>
+<div style="padding-left: 20%; padding-top: 10%; margin-bottom: 50px;">
     <button [ngStyle]="buttonColor(topics[0])" md-button class="topic-btn" (click)="fireEvent(topics[0])">{{topics[0].name}}</button>
     <button [ngStyle]="buttonColor(topics[1])" md-button class="topic-btn" (click)="fireEvent(topics[1])">{{topics[1].name}}</button>
     <button [ngStyle]="buttonColor(topics[2])" md-button class="topic-btn" (click)="fireEvent(topics[2])">{{topics[2].name}}</button>
     <button [ngStyle]="buttonColor(topics[3])" md-button class="topic-btn" (click)="fireEvent(topics[3])">{{topics[3].name}}</button>
     <button [ngStyle]="buttonColor(topics[4])" md-button class="topic-btn" (click)="fireEvent(topics[4])">{{topics[4].name}}</button>
 </div>
+<p style="padding-left: 20%; color: #7084FF">
+    Si deseas leer artículos sólo debes suscribirte a alguno de los temas expuestos justo arriba, basta con un click
+    para que empieces a recibir las publicaciones más recientes en el tema que más te interese.
+</p>

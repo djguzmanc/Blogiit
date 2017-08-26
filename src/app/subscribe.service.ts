@@ -8,7 +8,8 @@ export class SubscribeService {
 
     dataObs$ = this.dataSub.asObservable( );
 
-    constructor() { }
+    constructor() {
+    }
 
     updateData( data ) {
         this.dataSub.next( data );

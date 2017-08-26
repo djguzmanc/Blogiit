@@ -1,12 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
 body, html {
     overflow: hidden;
     height: 100%;
     width: 100%;
-    background-color: #DDD;
+    background-color: #CCC;
 }
 
 .nav {
@@ -33,7 +33,7 @@ md-tab {
 }
 
 .full-width {
-    width: 70% !important;
+    width: 90% !important;
 }
 
 .fullform {
@@ -49,4 +49,12 @@ md-tab {
 
 .posts {
     overflow-y: scroll;
+}
+
+.example-cards {
+    margin-top: 10px !important;
+}
+
+.post-btn {
+    background-color: #34B828;
 }

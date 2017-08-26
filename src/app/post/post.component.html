@@ -1,16 +1,16 @@
 <div class="text-center">
-    <h1>Postea algo...</h1>
+    <h3>Publica algo...</h3>
     <md-input-container class="full-width">
         <input #title mdInput placeholder="Título">
     </md-input-container>
 
-    <p>
+    <p style="margin-bottom: 20px">
         <md-input-container class="full-width">
-          <textarea #description mdInput placeholder="Descripción"></textarea>
+          <textarea #description mdInput placeholder="Descripción" rows="13"></textarea>
         </md-input-container>
     </p>
 
-    <md-radio-group>
+    <md-radio-group style="background-color: #72BAEE; padding: 5px; border-radius: 10px">
         <md-radio-button #id1 value="1" (click)="fool(id1.value)">Programación</md-radio-button>
         <md-radio-button #id2 value="2" (click)="fool(id2.value)">Salud y Belleza</md-radio-button>
         <md-radio-button #id3 value="3" (click)="fool(id3.value)">Tecnología</md-radio-button>
@@ -19,7 +19,7 @@
     </md-radio-group>
     <br><br>
 
-    <button md-button class="post-btn" style="text-align: center" (click)="submitPost(title.value,description.value);closePost()">
+    <button md-button class="post-btn" style="text-align: center" (click)="submitPost(title.value,description.value)">
       <md-icon style="margin-right: 0px">play_for_work</md-icon>
       Publish!
     </button>
