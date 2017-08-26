@@ -76,7 +76,9 @@ export class TabsComponent implements OnInit {
     }
 
     clearNotReaded( event ) {
-        this.topics[ event.index ].not_viewed = 0
+        var index = this.labelIndex( event.tab.textLabel )
+        this.topics[ index ].not_viewed = 0
+        //console.log( event )
     }
 
     isSubscribed( id ) {
@@ -90,5 +92,11 @@ export class TabsComponent implements OnInit {
             if ( this.indexPermited[ i ] == 1 )
                 return true
         return false
+    }
+
+    labelIndex( label ) {
+        for ( var i = 0; i < this.topics.length; i++ )
+            if ( this.topics[ i ].name.slice( 0, 5 ) == label.slice( 0, 5  ) )
+                return i
     }
 }
